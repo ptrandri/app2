@@ -15,20 +15,20 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="fullname" class="form-label">Full Name</label>
-                                    <input class="form-control" name="username" type="text" id="fullname"
-                                        placeholder="Enter your name" required />
+                                    <input class="form-control" type="text" id="fullname" placeholder="Enter your name"
+                                        required />
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Email address</label>
-                                    <input class="form-control" name="email" type="email" id="emailaddress" required
+                                    <input class="form-control" type="email" id="emailaddress" required
                                         placeholder="Enter your email" />
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="password" name="password" class="form-control"
+                                        <input type="password" id="password" class="form-control"
                                             placeholder="Enter your password" />
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>

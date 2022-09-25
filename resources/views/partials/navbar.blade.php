@@ -22,7 +22,7 @@
         </div>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a href="/login" class="nav-link"> Login</a>
+                <a href="/login" class="nav-link {{ $title === 'Login' ? 'active' : '' }}"> Login</a>
             </li>
         </ul>
     </div>
