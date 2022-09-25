@@ -5,26 +5,27 @@
             <div class="row justify-content-center">
                 <div class="col-xxl-4 col-lg-5">
                     <div class="card">
-                        <div class="card-header pt-2 pb-2 text-center bg-primary">
-                            <h4 class="text-white text-center pb-0 fw-bold">TICKET APP</h4>
-                        </div>
-
                         <div class="card-body p-4">
                             <div class="text-center w-75 m-auto">
-                                <h4 class="text-dark-50 text-center pb-0 fw-bold">Sign In</h4>
-                                <p class="text-muted mb-4">Enter your email address and password to access.</p>
+                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Free Sign Up</h4>
+                                <p class="text-muted mb-4">Don't have an account? Create your account</p>
                             </div>
 
-                            <form action="#">
+                            <form action="/register" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">Full Name</label>
+                                    <input class="form-control" type="text" id="fullname" placeholder="Enter your name"
+                                        required />
+                                </div>
+
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Email address</label>
-                                    <input class="form-control" type="email" id="emailaddress" required=""
+                                    <input class="form-control" type="email" id="emailaddress" required
                                         placeholder="Enter your email" />
                                 </div>
 
                                 <div class="mb-3">
-                                    <a href="pages-recoverpw.html" class="text-muted float-end">
-                                        <small>Forgot your password?</small></a>
                                     <label for="password" class="form-label">Password</label>
                                     <div class="input-group input-group-merge">
                                         <input type="password" id="password" class="form-control"
@@ -35,32 +36,32 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3 mb-3">
+                                <div class="mb-3">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-signin" checked />
-                                        <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                        <input type="checkbox" class="form-check-input" id="checkbox-signup" />
+                                        <label class="form-check-label" for="checkbox-signup">I accept <a href="#"
+                                                class="text-muted">Terms and Conditions</a></label>
                                     </div>
                                 </div>
 
-                                <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-primary" type="submit">Log In</button>
+                                <div class="mb-3 text-center">
+                                    <button class="btn btn-primary" type="submit">Sign Up</button>
                                 </div>
                             </form>
                         </div>
-                        <!-- end card-body -->
                     </div>
-                    <!-- end card -->
+
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="text-muted">Don't have an account? <a href="/register" class="text-muted ms-1"><b>Sign
-                                        Up</b></a>
+                            <p class="text-muted">Already have account? <a href="/login"
+                                    class="text-muted ms-1"><b>LogIn</b></a>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+    <footer class="footer footer-alt">2022 TicketApp</footer>
 @endsection

@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +22,13 @@ use App\Http\Controllers\LoginController;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return view('home', [
+    return view('page.home', [
         'title' => 'Home'
     ]);
 });
 
 Route::get('/about', function () {
-    return view('about', [
+    return view('page.about', [
         'title' => 'About',
         "name" => 'Andri Putra',
         "email" => 'ptrandri@hotmail.com'
@@ -33,9 +36,11 @@ Route::get('/about', function () {
 });
 
 Route::get('/blogs', function () {
-    return view('posts', [
+    return view('page.posts', [
         'title' => 'Posts'
     ]);
 });
 
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
