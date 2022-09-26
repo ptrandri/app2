@@ -2,14 +2,24 @@
 @section('header')
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
         <div class="container">
+
+
             <div class="row justify-content-center">
                 <div class="col-xxl-4 col-lg-5">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <div class="card">
                         <div class="card-header pt-2 pb-2 text-center bg-primary">
                             <h4 class="text-white text-center pb-0 fw-bold">TICKET APP</h4>
                         </div>
 
                         <div class="card-body p-4">
+
                             <div class="text-center w-75 m-auto">
                                 <h4 class="text-dark-50 text-center pb-0 fw-bold">Sign In</h4>
                                 <p class="text-muted mb-4">Enter your email address and password to access.</p>

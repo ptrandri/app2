@@ -13,35 +13,59 @@
 
                             <form action="/register" method="POST">
                                 @csrf
+
                                 <div class="mb-3">
                                     <label for="fullname" class="form-label">Full Name</label>
-                                    <input class="form-control" name="username" type="text" id="fullname"
-                                        placeholder="Enter your name" required />
+                                    <input class="form-control @error('username') is-invalid @enderror" name="username"
+                                        type="text" id="fullname" required placeholder="Enter your name" />
+                                    @error('username')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Email address</label>
-                                    <input class="form-control" name="email" type="email" id="emailaddress" required
-                                        placeholder="Enter your email" />
+                                    <input class="form-control @error('email') is-invalid @enderror" name="email"
+                                        type="email" id="emailaddress" required placeholder="Enter your email" />
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="password" name="password" class="form-control"
+                                        <input type="password" id="password" name="password"
+                                            class="form-control @error('password') is-invalid @enderror" required
                                             placeholder="Enter your password" />
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>
+                                        @error('password')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-signup" />
+                                        <input type="checkbox" required
+                                            class="form-check-input @error('checkbox') is-invalid @enderror" name='checkbox'
+                                            id="checkbox-signup" />
                                         <label class="form-check-label" for="checkbox-signup">I accept <a href="#"
                                                 class="text-muted">Terms and Conditions</a></label>
                                     </div>
+                                    @error('checkbox')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3 text-center">
