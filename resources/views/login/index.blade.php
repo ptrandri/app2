@@ -13,6 +13,13 @@
                         </div>
                     @endif
 
+                    @if (session()->has('LoginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('LoginError') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <div class="card">
                         <div class="card-header pt-2 pb-2 text-center bg-primary">
                             <h4 class="text-white text-center pb-0 fw-bold">TICKET APP</h4>
@@ -25,11 +32,18 @@
                                 <p class="text-muted mb-4">Enter your email address and password to access.</p>
                             </div>
 
-                            <form action="#">
+                            <form action="/login" method="POST">
+                                @csrf
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Email address</label>
-                                    <input class="form-control" type="email" id="emailaddress" required=""
-                                        placeholder="Enter your email" />
+                                    <input name="email" class="form-control @error('email') is-invalid @enderror"
+                                        type="email" id="emailaddress" required="" placeholder="Enter your email"
+                                        autofocus required value="{{ old('email') }}" />
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
@@ -37,8 +51,8 @@
                                         <small>Forgot your password?</small></a>
                                     <label for="password" class="form-label">Password</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="password" class="form-control"
-                                            placeholder="Enter your password" />
+                                        <input name="password" type="password" id="password" class="form-control"
+                                            placeholder="Enter your password" required />
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>

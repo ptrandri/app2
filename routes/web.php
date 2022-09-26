@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\LoginController;
@@ -41,6 +42,10 @@ Route::get('/blogs', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
