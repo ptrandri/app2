@@ -7,6 +7,7 @@
             </div>
             <a href="/tickets/create">
                 <button type="button" class="btn btn-primary">Add Ticket</button>
+            </a>
         </div>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
