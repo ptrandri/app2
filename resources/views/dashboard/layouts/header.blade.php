@@ -16,10 +16,15 @@
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Logout</span>
-                    </a>
+
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button type="submit" class="dropdown-item notify-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
+
                 </div>
             </li>
             {{-- End Profile section --}}
