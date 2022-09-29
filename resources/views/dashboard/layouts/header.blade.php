@@ -17,7 +17,7 @@
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="mdi mdi-logout me-1"></i>
+                        <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Logout</span>
                     </a>
                 </div>
@@ -25,7 +25,7 @@
             {{-- End Profile section --}}
         </ul>
         <button class="button-menu-mobile open-left">
-            <i class="mdi mdi-menu"></i>
+            <i class="fa-sharp fa-solid fa-align-justify"></i>
         </button>
     </div>
 </div>

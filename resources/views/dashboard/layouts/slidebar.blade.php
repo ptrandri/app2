@@ -17,15 +17,14 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
                     aria-controls="sidebarDashboards" class="side-nav-link">
-                    <i class="uil-home-alt"></i>
+                    <i class="fa-sharp fa-solid fa-house"></i>
                     <span class="badge bg-success float-end"></span>
                     <span> Dashboards </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="/ticket" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                <a href="/ticket" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
                     <span> Ticket </span>
                 </a>
             </li>
