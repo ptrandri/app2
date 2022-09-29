@@ -8,7 +8,7 @@
                     <span class="account-user-avatar">
                         <img src="assets/images/avatar-1.jpg" alt="user-image" class="rounded-circle" />
                     </span>
-                    <span>Andri Putra</span>
+                    <span>{{ auth()->user()->username }}</span>
                 </a>
                 <div
                     class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

@@ -15,11 +15,8 @@
             <li class="side-nav-title side-nav-item">Navigation</li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
-                    aria-controls="sidebarDashboards" class="side-nav-link">
-                    <i class="fa-sharp fa-solid fa-house"></i>
-                    <span class="badge bg-success float-end"></span>
-                    <span> Dashboards </span>
+                <a href="/dashboard" class="side-nav-link"><i class="fa-sharp fa-solid fa-house"></i>
+                    <span> Dashboard </span>
                 </a>
             </li>
 

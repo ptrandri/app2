@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->string('agentname');
+            $table->string('subject');
+            $table->string('type');
+            $table->text('description');
+            // $table->text('cemail');
+            // $table->string('cname');
+            // $table->string('cphone');
+            // $table->string('assignto');
+            // $table->string('filepath');
+            // $table->date('date')->format('d/m/Y');
             $table->timestamps();
         });
     }
