@@ -2,10 +2,10 @@
     <!-- LOGO -->
     <a href="/dashboard" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="assets/images/logo.png" alt="" height="16" />
+            <img src="{{ asset('assets/images/logo.png') }}" alt="" height="16" />
         </span>
         <span class="logo-sm">
-            <img src="assets/images/logo_sm.png" alt="" height="16" />
+            <img src="{{ asset('assets/images/logo_sm.png') }}" alt="" height="16" />
         </span>
     </a>
 
@@ -21,12 +21,10 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="/ticket" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
+                <a href="/tickets" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
                     <span> Ticket </span>
-
                 </a>
             </li>
-
         </ul>
         <div class="clearfix"></div>
     </div>

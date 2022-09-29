@@ -6,7 +6,7 @@
                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#"
                     role="button" aria-haspopup="false" aria-expanded="false">
                     <span class="account-user-avatar">
-                        <img src="assets/images/avatar-1.jpg" alt="user-image" class="rounded-circle" />
+                        <img src="{{ asset('assets/images/avatar-1.jpg') }}" alt="user-image" class="rounded-circle" />
                     </span>
                     <span>{{ auth()->user()->username }}</span>
                 </a>
