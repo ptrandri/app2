@@ -23,8 +23,10 @@
             <li class="side-nav-item">
                 <a href="/ticket" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
                     <span> Ticket </span>
+
                 </a>
             </li>
+
         </ul>
         <div class="clearfix"></div>
     </div>

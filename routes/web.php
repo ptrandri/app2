@@ -53,5 +53,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-// Route::get('/ticket', [TicketController::class, 'index'])->middleware('auth');
-Route::get('/ticket', [TicketController::class, 'index']);
+
+Route::get('/ticket/', [TicketController::class, 'index'])->middleware('auth');
