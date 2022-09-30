@@ -3,8 +3,16 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 mb-2 container-fluid">
         <h1 class="h5">Show Ticket</h1>
         <a href="{{ route('tickets.edit', $tickets->id) }}">
-            <button type="button" class="btn btn-primary">Edit Ticket</button>
+            <button type="button" class="btn btn-success btn-sm">Edit Ticket</button>
+            <td class="text-center">
+                <form action="{{ route('tickets.destroy', $tickets->id) }}" method="post" style="display: inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm"" type="submit">Delete</button>
+                </form>
+            </td>
         </a>
+
     </div>
 
     <div class="tab-content">

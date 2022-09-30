@@ -98,6 +98,8 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-
+        $tickets = Ticket::findOrFail($id);
+        $tickets->delete();
+        return redirect()->route('tickets.index')->with('succes','Tickets has been deleted');
     }
 }
