@@ -44,7 +44,7 @@ class TicketController extends Controller
         ]);
         Ticket::create($request->all());
 
-        return redirect()->route('tickets.index')->with('succes','Data Berhasil di Input');
+        return redirect()->route('tickets.index')->with('succes','Tickets has been created');
     }
 
     /**
@@ -80,7 +80,14 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $updateData = $request->validate([
+            'AgentName' => 'required',
+            'SubjectCase' => 'required',
+            'SubjectDesc' => 'required',
+            'CallerName' => 'required',
+        ]);
+        Ticket::whereId($id)->update($updateData);
+        return redirect()->route('tickets.index')->with('succes','Tickets has been updated');
     }
 
     /**
