@@ -32,6 +32,7 @@
                             <td>{{ $ticket->CallerName }}</td>
                             <td>{{ $ticket->created_at }}</td>
                             <td>{{ $ticket->updated_at }}</td>
+
                         </tr>
                     @endforeach
 
