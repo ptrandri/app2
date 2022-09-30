@@ -14,7 +14,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">AgentName</th>
+                        <th scope="col">Agent Name</th>
                         <th scope="col">Subject Case</th>
                         <th scope="col">Description</th>
                         <th scope="col">Caller Name</th>
@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ $ticket->id }}</td>
                             <td>{{ $ticket->AgentName }}</td>
-                            <td>{{ $ticket->SubjectCase }}</td>
+                            <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
                             <td>{{ $ticket->SubjectDesc }}</td>
                             <td>{{ $ticket->CallerName }}</td>
                             <td>{{ $ticket->created_at }}</td>

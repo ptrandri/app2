@@ -25,22 +25,22 @@
                     <div class="form-group">
                         @csrf
                         @method('PATCH')
-                        <label for="name">Name</label>
+                        <label for="name">Agent Name</label>
                         <input type="text" class="form-control mb-3" name="AgentName"
                             value="{{ $tickets->AgentName }}" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Subject Case</label>
                         <input type="text" class="form-control mb-3" name="SubjectCase"
                             value="{{ $tickets->SubjectCase }}" />
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
+                        <label for="phone">Description</label>
                         <input type="text" class="form-control mb-3" name="SubjectDesc"
                             value="{{ $tickets->SubjectDesc }}" />
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Caller Name</label>
                         <input type="text" class="form-control mb-3" name="CallerName"
                             value="{{ $tickets->CallerName }}" />
                     </div>

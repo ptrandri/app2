@@ -2,7 +2,7 @@
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 mb-2 container-fluid">
         <h1 class="h5">Show Ticket</h1>
-        <a href="/tickets/create">
+        <a href="{{ route('tickets.edit', $tickets->id) }}">
             <button type="button" class="btn btn-primary">Edit Ticket</button>
         </a>
     </div>
