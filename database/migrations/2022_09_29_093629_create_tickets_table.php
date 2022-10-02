@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('SubjectCase');
             $table->string('SubjectDesc');
             $table->string('CallerName');
+            $table->string('CallerEmail');
+            $table->string('Status');
+            $table->string('Priority');
+            $table->string('Assigned_to');
             $table->timestamps();
         });
     }

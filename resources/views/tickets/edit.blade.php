@@ -45,6 +45,29 @@
                         <input type="text" class="form-control mb-3" name="CallerName"
                             value="{{ $tickets->CallerName }}" />
                     </div>
+
+                    <div class="form-group">
+                        <label for="CallerEmail">Caller Email</label>
+                        <input type="email" class="form-control mb-3" name="CallerEmail"
+                            value="{{ $tickets->CallerEmail }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Status">Status</label>
+                        <input type="text" class="form-control mb-3" name="Status" value="{{ $tickets->Status }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Priority">Priority</label>
+                        <input type="text" class="form-control mb-3" name="Priority" value="{{ $tickets->Priority }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Assigned_to">Assigned To</label>
+                        <input type="text" class="form-control mb-3" name="Assigned_to"
+                            value="{{ $tickets->Assigned_to }}" />
+                    </div>
+
                     <button type="submit" class="btn btn-block btn-danger">Update</button>
                 </form>
             </div>

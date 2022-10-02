@@ -13,6 +13,6 @@ class Ticket extends Model
     protected $primaryKey = 'id';
     
     protected $fillable = [
-        'AgentName','SubjectCase','SubjectDesc','CallerName'
+        'AgentName','SubjectCase','SubjectDesc','CallerName','CallerEmail','Status','Priority','Assigned_to'
     ];
 }

@@ -41,6 +41,10 @@ class TicketController extends Controller
             'SubjectCase' => 'required',
             'SubjectDesc' => 'required',
             'CallerName' => 'required',
+            'CallerEmail' => 'required',
+            'Status' => 'required',
+            'Priority' => 'required',
+            'Assigned_to' => 'required',
         ]);
         Ticket::create($request->all());
 
@@ -85,6 +89,10 @@ class TicketController extends Controller
             'SubjectCase' => 'required',
             'SubjectDesc' => 'required',
             'CallerName' => 'required',
+            'CallerEmail' => 'required',
+            'Status' => 'required',
+            'Priority' => 'required',
+            'Assigned_to' => 'required',
         ]);
         Ticket::whereId($id)->update($updateData);
         return redirect()->route('tickets.index')->with('succes','Tickets has been updated');

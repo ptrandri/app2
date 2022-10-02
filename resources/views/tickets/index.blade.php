@@ -18,6 +18,9 @@
                         <th scope="col">Subject Case</th>
                         <th scope="col">Description</th>
                         <th scope="col">Caller Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Assigned To</th>
                         <th scope="col">Created Date</th>
                         <th scope="col">Updated Date</th>
                     </tr>
@@ -30,6 +33,9 @@
                             <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
                             <td>{{ $ticket->SubjectDesc }}</td>
                             <td>{{ $ticket->CallerName }}</td>
+                            <td>{{ $ticket->Status }}</td>
+                            <td>{{ $ticket->Priority }}</td>
+                            <td>{{ $ticket->Assigned_to }}</td>
                             <td>{{ $ticket->created_at }}</td>
                             <td>{{ $ticket->updated_at }}</td>
 

@@ -15,30 +15,69 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="subject">Agent Name</label>
-                                        <input type="text" class="form-control" id="subject" name="AgentName"
+                                        <input type="text" class="form-control" id="AgentName" name="AgentName"
                                             placeholder="Agent Name Working on Shift" value="" required="">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Subject</label>
-                                        <textarea type="text" class="form-control" id="description" name="SubjectCase"
+                                        <textarea type="text" class="form-control" id="SubjectCase" name="SubjectCase"
                                             placeholder="Enter your subject Problem" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="resolution">Description</label>
-                                        <textarea type="text" class="form-control" id="resolution" name="SubjectDesc"
+                                        <textarea type="text" class="form-control" id="SubjectDesc" name="SubjectDesc"
                                             placeholder="Please Give Your Problem Description"></textarea>
                                     </div>
                                 </div>
+
+
+                                <h4 class="card-title mt-3">Customer Details</h4>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="CallerName">Caller Name</label>
+                                    <input type="text" class="form-control" id="CallerName" name="CallerName"
+                                        placeholder="Please Enter the Caller Name" value="" required="">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label" for="CallerEmail">Caller Email</label>
+                                    <input type="email" class="form-control" id="CallerEmail" name="CallerEmail"
+                                        placeholder="Please Enter the Caller Email" value="">
+                                </div>
+
+
+                                <h4 class="card-title mt-3">Tickets Details</h4>
                                 <div class="col-12">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="resolution">Caller Name</label>
-                                        <textarea type="text" class="form-control" id="resolution" name="CallerName"
-                                            placeholder="Please Enter the Caller Name"></textarea>
-                                    </div>
+                                    <label class="form-label" for="Status">Status</label>
+                                    <select class="form-select mb-3" id="Status" name="Status">
+                                        {{-- <option selected>Select The Ticket Status</option> --}}
+                                        <option value="Open">Open</option>
+                                        <option value="Escalated">Escalated</option>
+                                        <option value="Closed">Closed</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label" for="Priority">Priority</label>
+                                    <select class="form-select mb-3" id="Priority" name="Priority">
+                                        {{-- <option selected>Select The Ticket Priority</option> --}}
+                                        <option value="Low">Low</option>
+                                        <option value="Normal">Closed</option>
+                                        <option value="High">Escalated</option>
+                                        <option value="Critical">Escalated</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label" for="Assigned_to">Assigned To</label>
+                                    <select class="form-select mb-3" id="Assigned_to" name="Assigned_to">
+                                        {{-- <option selected>Assigned To</option> --}}
+                                        <option value="Agent">Agent</option>
+                                        <option value="Engineer">Engineer</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-start">
@@ -51,6 +90,5 @@
                 </div>
             </div>
         </form>
-
     </div>
 @endsection
