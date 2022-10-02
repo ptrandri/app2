@@ -54,6 +54,23 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="password_confirmation" name="password_confirmation"
+                                            class="form-control @error('password_confirmation') is-invalid @enderror"
+                                            required placeholder="Enter your password" />
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
+                                        @error('password_confirmation')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
                                     <div class="form-check">
                                         <input type="checkbox" required
                                             class="form-check-input @error('checkbox') is-invalid @enderror" name='checkbox'

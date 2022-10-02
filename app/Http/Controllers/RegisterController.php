@@ -27,6 +27,7 @@ class RegisterController extends Controller
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255',
+            'password_confirmation' => 'required|same:password',
             'checkbox' =>'required',
         ]);
         $validateData['password'] = Hash::make($validateData['password']);
