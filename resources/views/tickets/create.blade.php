@@ -16,26 +16,28 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="subject">Agent Name</label>
                                         <input type="text" class="form-control" id="subject" name="AgentName"
-                                            placeholder="Subject" value="" required="">
+                                            placeholder="Agent Name Working on Shift" value="" required="">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Subject</label>
-                                        <textarea type="text" class="form-control" id="description" name="SubjectCase" placeholder="Description"
-                                            required=""></textarea>
+                                        <textarea type="text" class="form-control" id="description" name="SubjectCase"
+                                            placeholder="Enter your subject Problem" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="resolution">Description</label>
-                                        <textarea type="text" class="form-control" id="resolution" name="SubjectDesc" placeholder="Resolution"></textarea>
+                                        <textarea type="text" class="form-control" id="resolution" name="SubjectDesc"
+                                            placeholder="Please Give Your Problem Description"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="resolution">Caller Name</label>
-                                        <textarea type="text" class="form-control" id="resolution" name="CallerName" placeholder="Resolution"></textarea>
+                                        <textarea type="text" class="form-control" id="resolution" name="CallerName"
+                                            placeholder="Please Enter the Caller Name"></textarea>
                                     </div>
                                 </div>
 
