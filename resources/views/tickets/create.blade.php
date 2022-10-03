@@ -14,21 +14,21 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label" for="subject">Agent Name</label>
+                                        <label class="form-label" for="AgentName">Agent Name</label>
                                         <input type="text" class="form-control" id="AgentName" name="AgentName"
                                             placeholder="Agent Name Working on Shift" value="" required="">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Subject</label>
+                                        <label class="form-label" for="SubjectCase">Subject</label>
                                         <textarea type="text" class="form-control" id="SubjectCase" name="SubjectCase"
                                             placeholder="Enter your subject Problem" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label" for="resolution">Description</label>
+                                        <label class="form-label" for="SubjectDesc">Description</label>
                                         <textarea type="text" class="form-control" id="SubjectDesc" name="SubjectDesc"
                                             placeholder="Please Give Your Problem Description"></textarea>
                                     </div>
@@ -53,7 +53,6 @@
                                 <div class="col-12">
                                     <label class="form-label" for="Status">Status</label>
                                     <select class="form-select mb-3" id="Status" name="Status">
-                                        {{-- <option selected>Select The Ticket Status</option> --}}
                                         <option value="Open">Open</option>
                                         <option value="Escalated">Escalated</option>
                                         <option value="Closed">Closed</option>
@@ -63,18 +62,16 @@
                                 <div class="col-12">
                                     <label class="form-label" for="Priority">Priority</label>
                                     <select class="form-select mb-3" id="Priority" name="Priority">
-                                        {{-- <option selected>Select The Ticket Priority</option> --}}
                                         <option value="Low">Low</option>
-                                        <option value="Normal">Closed</option>
-                                        <option value="High">Escalated</option>
-                                        <option value="Critical">Escalated</option>
+                                        <option value="Normal">Normal</option>
+                                        <option value="High">High</option>
+                                        <option value="Critical">Critical</option>
                                     </select>
                                 </div>
 
                                 <div class="col-12">
                                     <label class="form-label" for="Assigned_to">Assigned To</label>
                                     <select class="form-select mb-3" id="Assigned_to" name="Assigned_to">
-                                        {{-- <option selected>Assigned To</option> --}}
                                         <option value="Agent">Agent</option>
                                         <option value="Engineer">Engineer</option>
                                     </select>
