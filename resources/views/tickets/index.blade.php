@@ -11,9 +11,9 @@
         </div>
         <div class="table-responsive">
             @if (session()->has('message'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('message') }}
+                <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <strong>{{ session('message') }}</strong>
                 </div>
             @endif
             <table class="table table-striped table-sm">
