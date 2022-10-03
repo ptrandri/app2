@@ -11,67 +11,93 @@
         </div>
 
         <div class="card push-top">
-            <div class="card-header">Case Summary </div>
-            <div class="card-body">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div><br />
-                @endif
-                <form method="post" action="{{ route('tickets.update', $tickets->id) }}">
-                    <div class="form-group">
-                        @csrf
-                        @method('PATCH')
-                        <label for="name">Agent Name</label>
-                        <input type="text" class="form-control mb-3" name="AgentName"
-                            value="{{ $tickets->AgentName }}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Subject Case</label>
-                        <input type="text" class="form-control mb-3" name="SubjectCase"
-                            value="{{ $tickets->SubjectCase }}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Description</label>
-                        <input type="text" class="form-control mb-3" name="SubjectDesc"
-                            value="{{ $tickets->SubjectDesc }}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Caller Name</label>
-                        <input type="text" class="form-control mb-3" name="CallerName"
-                            value="{{ $tickets->CallerName }}" />
-                    </div>
+            <form method="post" action="{{ route('tickets.update', $tickets->id) }}">
+                <div class="form-group">
+                    @csrf
+                    @method('PATCH')
+                    <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div><br />
+                        @endif
+                        <h4 class="card-title">Case Summary</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="AgentName">Agent Name</label>
+                                    <input type="text" class="form-control" id="AgentName" name="AgentName"
+                                        placeholder="Agent Name Working on Shift" value="{{ $tickets->AgentName }}"
+                                        required="">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="SubjectCase">Subject Case</label>
+                                    <textarea type="text" class="form-control" id="SubjectCase" name="SubjectCase"
+                                        placeholder="Enter your subject Problem">{{ $tickets->SubjectCase }}</textarea>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label for="CallerEmail">Caller Email</label>
-                        <input type="email" class="form-control mb-3" name="CallerEmail"
-                            value="{{ $tickets->CallerEmail }}" />
-                    </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="SubjectDesc">Description</label>
+                                    <textarea type="text" class="form-control" id="SubjectDesc" name="SubjectDesc"
+                                        placeholder="Please Give Your Problem Description">{{ $tickets->SubjectDesc }}</textarea>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label for="Status">Status</label>
-                        <input type="text" class="form-control mb-3" name="Status" value="{{ $tickets->Status }}" />
-                    </div>
+                            <h4 class="card-title mt-3">Customer Details</h4>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="CallerName">Caller Name</label>
+                                <input type="text" class="form-control" id="CallerName" name="CallerName"
+                                    placeholder="Please Enter the Caller Name" value="{{ $tickets->CallerName }}"
+                                    required="">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="Priority">Priority</label>
-                        <input type="text" class="form-control mb-3" name="Priority" value="{{ $tickets->Priority }}" />
-                    </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="CallerEmail">Caller Email</label>
+                                <input type="email" class="form-control" id="CallerEmail" name="CallerEmail"
+                                    placeholder="Please Enter the Caller Email" value="{{ $tickets->CallerEmail }}">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="Assigned_to">Assigned To</label>
-                        <input type="text" class="form-control mb-3" name="Assigned_to"
-                            value="{{ $tickets->Assigned_to }}" />
-                    </div>
 
-                    <button type="submit" class="btn btn-block btn-danger">Update</button>
-                </form>
-            </div>
+                            <h4 class="card-title mt-3">Tickets Details</h4>
+                            <div class="col-12">
+                                <label class="form-label" for="Status">Status</label>
+                                <select class="form-select mb-3" id="Status" name="Status">
+                                    <option value="Open">Open</option>
+                                    <option value="Escalated">Escalated</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label" for="Priority">Priority</label>
+                                <select class="form-select mb-3" id="Priority" name="Priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="High">High</option>
+                                    <option value="Critical">Critical</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label" for="Assigned_to">Assigned To</label>
+                                <select class="form-select mb-3" id="Assigned_to" name="Assigned_to">
+                                    <option value="Agent">Agent</option>
+                                    <option value="Engineer">Engineer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-danger">Update</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-
 @endsection
