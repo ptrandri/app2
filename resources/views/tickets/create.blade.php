@@ -15,37 +15,65 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="AgentName">Agent Name</label>
-                                        <input type="text" class="form-control" id="AgentName" name="AgentName"
-                                            placeholder="Agent Name Working on Shift" value="" required="">
+                                        <input type="text" class="form-control @error('AgentName') is-invalid @enderror"
+                                            id="AgentName" name="AgentName" placeholder="Agent Name Working on Shift"
+                                            value="" required="">
                                     </div>
+                                    @error('AgentName')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="SubjectCase">Subject</label>
-                                        <textarea type="text" class="form-control" id="SubjectCase" name="SubjectCase"
-                                            placeholder="Enter your subject Problem" required=""></textarea>
+                                        <textarea type="text" class="form-control @error('SubjectCase') is-invalid @enderror" id="SubjectCase"
+                                            name="SubjectCase" placeholder="Enter your subject Problem" required=""></textarea>
                                     </div>
+                                    @error('SubjectCase')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="SubjectDesc">Description</label>
-                                        <textarea type="text" class="form-control" id="SubjectDesc" name="SubjectDesc"
-                                            placeholder="Please Give Your Problem Description"></textarea>
+                                        <textarea type="text" class="form-control @error('SubjectDesc') is-invalid @enderror" id="SubjectDesc"
+                                            name="SubjectDesc" placeholder="Please Give Your Problem Description"></textarea>
                                     </div>
+                                    @error('SubjectDesc')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
 
                                 <h4 class="card-title mt-3">Customer Details</h4>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label" for="CallerName">Caller Name</label>
-                                    <input type="text" class="form-control" id="CallerName" name="CallerName"
-                                        placeholder="Please Enter the Caller Name" value="" required="">
+                                    <input type="text" class="form-control @error('CallerName') is-invalid @enderror"
+                                        id="CallerName" name="CallerName" placeholder="Please Enter the Caller Name"
+                                        value="" required="">
+                                    @error('CallerName')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label" for="CallerEmail">Caller Email</label>
-                                    <input type="email" class="form-control" id="CallerEmail" name="CallerEmail"
-                                        placeholder="Please Enter the Caller Email" value="">
+                                    <input type="email" class="form-control @error('CallerEmail') is-invalid @enderror"
+                                        id="CallerEmail" name="CallerEmail" placeholder="Please Enter the Caller Email"
+                                        value="">
+                                    @error('CallerEmail')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
 
@@ -80,6 +108,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-start">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
+
 
                             </div>
                         </div>

@@ -41,7 +41,7 @@ class TicketController extends Controller
             'SubjectCase' => 'required',
             'SubjectDesc' => 'required',
             'CallerName' => 'required',
-            'CallerEmail' => 'required',
+            'CallerEmail' => 'required|email:dns',
             'Status' => 'required',
             'Priority' => 'required',
             'Assigned_to' => 'required',
