@@ -12,7 +12,6 @@
                 </form>
             </td>
         </a>
-
     </div>
 
     <div class="tab-content">
@@ -22,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Ticket Information</h4>
+                            <h4 class="card-title">Case Information</h4>
                             <table width="100%" class="table table-borderless mb-0">
                                 <tbody>
                                     <tr>
@@ -31,6 +30,25 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <table width="100%" class="table table-borderless mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td width="15%">Subject Case</td>
+                                        <td width="0%">{{ $tickets->SubjectCase }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table width="100%" class="table table-borderless mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td width="15%">Description</td>
+                                        <td width="0%">{{ $tickets->SubjectDesc }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
@@ -40,29 +58,37 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Case Summary</h4>
-
+                            <h4 class="card-title mt-3">Tickets Details</h4>
                             <table width="100%" class="table table-borderless mb-0">
                                 <tbody>
-                                    <tr>
-                                        <td width="15%">Subject</td>
-                                        <td width="85%" colspan="2">{{ $tickets->SubjectCase }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="15%">Description</td>
-                                        <td width="85%" colspan="2">{{ $tickets->SubjectDesc }}</td>
-                                    </tr>
                                     <tr>
                                         <td width="15%">Caller Name</td>
                                         <td width="85%" colspan="2">{{ $tickets->CallerName }}</td>
                                     </tr>
+                                    <tr>
+                                        <td width="15%">Caller Email</td>
+                                        <td width="85%" colspan="2">{{ $tickets->CallerEmail }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Ticket Status</td>
+                                        <td width="85%" colspan="2">{{ $tickets->Status }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Ticket Priority</td>
+                                        <td width="85%" colspan="2">{{ $tickets->Priority }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Assigned To</td>
+                                        <td width="85%" colspan="2">{{ $tickets->Assigned_to }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 @endsection

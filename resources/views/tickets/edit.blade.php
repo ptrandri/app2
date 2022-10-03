@@ -62,7 +62,8 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label" for="CallerEmail">Caller Email</label>
                                 <input type="email" class="form-control" id="CallerEmail" name="CallerEmail"
-                                    placeholder="Please Enter the Caller Email" value="{{ $tickets->CallerEmail }}">
+                                    placeholder="Please Enter the Caller Email" value="{{ $tickets->CallerEmail }}"
+                                    required>
                             </div>
 
 
