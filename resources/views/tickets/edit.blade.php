@@ -68,32 +68,39 @@
 
 
                             <h4 class="card-title mt-3">Tickets Details</h4>
-                            <div class="col-12">
+                            <div class="col-12 mb-3">
                                 <label class="form-label" for="Status">Status</label>
-                                <select class="form-select mb-3" id="Status" name="Status">
+                                <input class="form-control" list="Status_list" id="Status" name="Status"
+                                    placeholder="Ticket Status" value="{{ $tickets->Status }}">
+                                <datalist id="Status_list">
                                     <option value="Open">Open</option>
                                     <option value="Escalated">Escalated</option>
                                     <option value="Closed">Closed</option>
-                                </select>
+                                </datalist>
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label" for="Priority">Priority</label>
-                                <select class="form-select mb-3" id="Priority" name="Priority">
+                            <div class="col-12 mb-3">
+                                <label for="Priority" class="form-label">Priority</label>
+                                <input class="form-control" list="Priority_list" id="Priority" name="Priority"
+                                    placeholder="Ticket Priority" value="{{ $tickets->Priority }}">
+                                <datalist id="Priority_list">
                                     <option value="Low">Low</option>
                                     <option value="Normal">Normal</option>
                                     <option value="High">High</option>
                                     <option value="Critical">Critical</option>
-                                </select>
+                                </datalist>
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label" for="Assigned_to">Assigned To</label>
-                                <select class="form-select mb-3" id="Assigned_to" name="Assigned_to">
+                            <div class="col-12 mb-3">
+                                <label for="form-label" class="form-label">Assigned To</label>
+                                <input class="form-control" list="Assigned_list" id="Assigned_to" name="Assigned_to"
+                                    placeholder="Assign To" value="{{ $tickets->Assigned_to }}">
+                                <datalist id="Assigned_list">
                                     <option value="Agent">Agent</option>
                                     <option value="Engineer">Engineer</option>
-                                </select>
+                                </datalist>
                             </div>
+
                         </div>
                         <button type="submit" class="btn btn-block btn-danger">Update</button>
                     </div>

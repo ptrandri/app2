@@ -12,7 +12,7 @@
     <div class="h-100" id="leftside-menu-container" data-simplebar="">
         <!--- Sidemenu -->
         <ul class="side-nav">
-            <li class="side-nav-title side-nav-item">Navigation</li>
+            <li class="side-nav-title side-nav-item">Main</li>
 
             <li class="side-nav-item">
                 <a href="/dashboard" class="side-nav-link"><i class="fa-sharp fa-solid fa-house"></i>
@@ -25,6 +25,20 @@
                     <span> Ticket </span>
                 </a>
             </li>
+
+            <li class="side-nav-title side-nav-item">Admin</li>
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link"><i class="fa-sharp fa-solid fa-file-import"></i>
+                    <span> Report </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link"><i class="fa-sharp fa-solid fa-users"></i>
+                    <span> Users </span>
+                </a>
+            </li>
+
         </ul>
         <div class="clearfix"></div>
     </div>
