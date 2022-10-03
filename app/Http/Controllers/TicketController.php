@@ -48,7 +48,7 @@ class TicketController extends Controller
         ]);
         Ticket::create($request->all());
 
-        return redirect()->route('tickets.index')->with('succes','Tickets has been created');
+        return redirect()->route('tickets.index')->with('message','Tickets has been Created');
     }
 
     /**
@@ -95,7 +95,7 @@ class TicketController extends Controller
             'Assigned_to' => 'required',
         ]);
         Ticket::whereId($id)->update($updateData);
-        return redirect()->route('tickets.index')->with('succes','Tickets has been updated');
+        return redirect()->route('tickets.index')->with('message','Tickets has been updated');
     }
 
     /**
@@ -108,6 +108,6 @@ class TicketController extends Controller
     {
         $tickets = Ticket::findOrFail($id);
         $tickets->delete();
-        return redirect()->route('tickets.index')->with('succes','Tickets has been deleted');
+        return redirect()->route('tickets.index')->with('message','Tickets has been deleted');
     }
 }
