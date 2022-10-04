@@ -4,7 +4,7 @@
         <h1 class="h5">Create Ticket</h1>
     </div>
     <div class="container-fluid">
-        <form action="{{ route('tickets.store') }}" method="POST">
+        <form action="{{ route('tickets.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12">
@@ -103,6 +103,17 @@
                                         <option value="Agent">Agent</option>
                                         <option value="Engineer">Engineer</option>
                                     </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Please Upload your file</label>
+                                    <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                        id="image" name="image">
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-start">

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('Status');
             $table->string('Priority');
             $table->string('Assigned_to');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

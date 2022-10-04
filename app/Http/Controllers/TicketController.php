@@ -36,7 +36,7 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validateData = $request->validate([
             'AgentName' => 'required',
             'SubjectCase' => 'required',
             'SubjectDesc' => 'required',
@@ -45,8 +45,14 @@ class TicketController extends Controller
             'Status' => 'required',
             'Priority' => 'required',
             'Assigned_to' => 'required',
+            'image' => 'sometimes|nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
-        Ticket::create($request->all());
+
+        if($request->file('image')){
+            $validateData['image'] = $request->file('image')->store('image');
+        }
+
+        Ticket::create($validateData);
 
         return redirect()->route('tickets.index')->with('message','Tickets has been Created');
     }
