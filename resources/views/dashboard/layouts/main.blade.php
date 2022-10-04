@@ -9,17 +9,20 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- Bootstrap Css -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="{{ URL::asset('/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
 
-    <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
+    <link href="{{ URL::asset('/assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
 
     @stack('css')
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="http://fonts.cdnfonts.com/css/nunito" rel="stylesheet">
+
 </head>
 
 <body class="loading"
@@ -44,8 +47,8 @@
     @include('dashboard.layouts.footer')
 
     {{-- JS --}}
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
+    <script src="{{ url::asset('assets/js/vendor.min.js') }}"></script>
+    <script src="{{ url::asset('assets/js/app.min.js') }}"></script>
 
 </body>
 
