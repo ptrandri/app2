@@ -40,7 +40,7 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card mini-stat bg-primary">
                 <div class="card-body mini-stat-img">
-                    <div class="text-warning fa-lg">
+                    <div class="text-white fa-lg">
                         <i class="float-end fa-solid fa-folder-open"></i>
                     </div>
                     <div class="text-white">
