@@ -71,10 +71,46 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
         <h1 class="h5">Ticket Info</h1>
     </div>
-    <div class="card">
-        <div class="mt-1 mb-1">
-            <h5 class="text-start ms-1">No ticket data available assigned to you!</h5>
+
+    @if ($dashboard->where('Status', 'Open')->count())
+        <div class="card">
+            <table class="table bg-white text-black">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Agent Name</th>
+                        <th scope="col">Subject Case</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Caller Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Assigned To</th>
+                        <th scope="col">Created Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dashboard->where('Status', 'Open')->reverse() as $ticket)
+                        <tr>
+                            <td>{{ $ticket->id }}</td>
+                            <td>{{ $ticket->AgentName }}</td>
+                            <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
+                            <td>{{ $ticket->SubjectDesc }}</td>
+                            <td>{{ $ticket->CallerName }}</td>
+                            <td>{{ $ticket->Status }}</td>
+                            <td>{{ $ticket->Priority }}</td>
+                            <td>{{ $ticket->Assigned_to }}</td>
+                            <td>{{ $ticket->created_at }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-    </div>
-    </div>
+    @else
+        <div class="card">
+            <div class="mt-1 mb-1">
+                <h5 class="text-start ms-1">No ticket available assigned to you!</h5>
+            </div>
+        </div>
+    @endif
+
 @endsection
