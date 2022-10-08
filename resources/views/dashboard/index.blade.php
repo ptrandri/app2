@@ -10,13 +10,13 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card mini-stat bg-primary">
                 <div class="card-body mini-stat-img">
-                    <div class="text-white fa-lg">
+                    <div class="text-white fa-2xl">
                         <i class="float-end fa-solid fa-plus"></i>
                     </div>
                     <div class="text-white">
                         <h6 class="text-uppercase mb-3 font-size-16 text-white">TICKET CREATED</h6>
                         <span class="badge bg-info"> </span>
-                        <span class="ms-2">30</span>
+                        <span class="ms-2">{{ $dashboard->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -25,13 +25,13 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card mini-stat bg-primary">
                 <div class="card-body mini-stat-img">
-                    <div class="text-white fa-lg">
+                    <div class="text-white fa-2xl">
                         <i class="float-end fa-solid fa-folder-open"></i>
                     </div>
                     <div class="text-white">
                         <h6 class="text-uppercase mb-3 font-size-16 text-white">OPEN</h6>
                         <span class="badge bg-info"> </span>
-                        <span class="ms-2">10</span>
+                        <span class="ms-2">{{ $dashboard->where('Status', 'Open')->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -40,13 +40,13 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card mini-stat bg-primary">
                 <div class="card-body mini-stat-img">
-                    <div class="text-white fa-lg">
-                        <i class="float-end fa-solid fa-folder-open"></i>
+                    <div class="text-white fa-2xl">
+                        <i class="float-end fa-solid fa-arrow-right-arrow-left"></i>
                     </div>
                     <div class="text-white">
                         <h6 class="text-uppercase mb-3 font-size-16 text-white">ESCALATED</h6>
                         <span class="badge bg-info"> </span>
-                        <span class="ms-2">10</span>
+                        <span class="ms-2">{{ $dashboard->where('Status', 'Escalated')->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,13 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card mini-stat bg-primary">
                 <div class="card-body mini-stat-img">
-                    <div class="text-white fa-lg">
-                        <i class="float-end fa-sharp fa-solid fa-circle-xmark"></i>
+                    <div class="text-white fa-2xl">
+                        <i class="float-end fa-sharp fa-solid fa-folder-closed"></i>
                     </div>
                     <div class="text-white">
-                        <h6 class="text-uppercase mb-3 font-size-16 text-white">CLOSED</h6>
+                        <h6 class="text-uppercase mb-3 font-size-20 text-white">CLOSED</h6>
                         <span class="badge bg-info"> </span>
-                        <span class="ms-2">5</span>
+                        <span class="ms-2">{{ $dashboard->where('Status', 'Closed')->count() }}</span>
                     </div>
                 </div>
             </div>
@@ -76,9 +76,5 @@
             <h5 class="text-start ms-1">No ticket data available assigned to you!</h5>
         </div>
     </div>
-
-
-
-
     </div>
 @endsection
