@@ -66,40 +66,45 @@
                                     required>
                             </div>
 
-
                             <h4 class="card-title mt-3">Tickets Details</h4>
-                            <div class="col-12 mb-3">
+                            <div class="col-12">
                                 <label class="form-label" for="Status">Status</label>
-                                <input class="form-control" list="Status_list" id="Status" name="Status"
-                                    placeholder="Ticket Status" value="{{ $tickets->Status }}">
-                                <datalist id="Status_list">
-                                    <option value="Open">Open</option>
-                                    <option value="Escalated">Escalated</option>
-                                    <option value="Closed">Closed</option>
-                                </datalist>
+                                <select class="form-select mb-3" id="Status" name="Status">
+                                    <option value="Open" {{ $tickets->Status == 'Open' ? 'selected' : '' }}>Open </option>
+                                    <option value="Escalated" {{ $tickets->Status == 'Escalated' ? 'selected' : '' }}>
+                                        Escalated </option>
+                                    <option value="Closed" {{ $tickets->Status == 'Closed' ? 'selected' : '' }}>Closed
+                                    </option>
+                                </select>
                             </div>
 
-                            <div class="col-12 mb-3">
-                                <label for="Priority" class="form-label">Priority</label>
-                                <input class="form-control" list="Priority_list" id="Priority" name="Priority"
-                                    placeholder="Ticket Priority" value="{{ $tickets->Priority }}">
-                                <datalist id="Priority_list">
-                                    <option value="Low">Low</option>
-                                    <option value="Normal">Normal</option>
-                                    <option value="High">High</option>
-                                    <option value="Critical">Critical</option>
-                                </datalist>
+                            <div class="col-12">
+                                <label class="form-label" for="Priority">Priority</label>
+                                <select class="form-select mb-3" id="Priority" name="Priority">
+                                    <option value="Low" {{ $tickets->Priority == 'Low' ? 'selected' : '' }}>Low
+                                    </option>
+                                    <option value="Normal" {{ $tickets->Priority == 'Normal' ? 'selected' : '' }}>Normal
+                                    </option>
+                                    <option value="High" {{ $tickets->Priority == 'High' ? 'selected' : '' }}>High
+                                    </option>
+                                    <option value="Critical" {{ $tickets->Priority == 'Critical' ? 'selected' : '' }}>
+                                        Critical
+                                    </option>
+                                </select>
                             </div>
 
-                            <div class="col-12 mb-3">
-                                <label for="form-label" class="form-label">Assigned To</label>
-                                <input class="form-control" list="Assigned_list" id="Assigned_to" name="Assigned_to"
-                                    placeholder="Assign To" value="{{ $tickets->Assigned_to }}">
-                                <datalist id="Assigned_list">
-                                    <option value="Agent">Agent</option>
-                                    <option value="Engineer">Engineer</option>
-                                </datalist>
+                            <div class="col-12">
+                                <label class="form-label" for="Assigned_to">Assigned To</label>
+                                <select class="form-select mb-3" id="Assigned_to" name="Assigned_to">
+                                    <option value="Agent" {{ $tickets->Assigned_to == 'Agent' ? 'selected' : '' }}>
+                                        Agent
+                                    </option>
+                                    <option value="Engineer" {{ $tickets->Assigned_to == 'Engineer' ? 'selected' : '' }}>
+                                        Engineer
+                                    </option>
+                                </select>
                             </div>
+
 
                         </div>
                         <button type="submit" class="btn btn-block btn-danger">Update</button>
