@@ -23,6 +23,8 @@
 
     <link href="http://fonts.cdnfonts.com/css/nunito" rel="stylesheet">
 
+    <link rel="icon" href="{{ asset('/assets/images/favicion.png') }}" />
+
 </head>
 
 <body class="loading"
