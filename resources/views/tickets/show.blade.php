@@ -83,7 +83,18 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <h4 class="card-title mt-4">Tickets Image</h4>
+                            <div class="row mt-3">
+                                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                                    <img src="/storage/{{ $tickets->image }}" class="w-100 shadow-1-strong rounded mb-4"
+                                        alt="Ticket-image" />
+                                </div>
+                            </div>
+
+
                         </div>
+
                     </div>
                 </div>
             </div>
