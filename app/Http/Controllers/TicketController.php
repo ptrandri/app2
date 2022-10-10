@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TicketController extends Controller
 {
@@ -90,6 +91,7 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $tickets = Ticket::findOrFail($id);
         $updateData = $request->validate([
             'AgentName' => 'required',
             'SubjectCase' => 'required',
@@ -102,10 +104,12 @@ class TicketController extends Controller
             'image' => 'sometimes|nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
 
-        if($request->file('image')){
-            $updateData['image'] = $request->file('image')->store('image');
+        if($request->file('image')) {
+            if($tickets->image) {
+                Storage::delete($tickets->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('image');
         }
-
         Ticket::whereId($id)->update($updateData);
         return redirect()->route('tickets.index')->with('message','Tickets has been updated');
     }
