@@ -28,17 +28,16 @@
 
             <li class="side-nav-title side-nav-item">Admin</li>
             <li class="side-nav-item">
-                <a href="#" class="side-nav-link"><i class="fa-sharp fa-solid fa-file-import"></i>
+                <a href="/report" class="side-nav-link"><i class="fa-sharp fa-solid fa-file-import"></i>
                     <span> Report </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="#" class="side-nav-link"><i class="fa-sharp fa-solid fa-users"></i>
+                <a href="/users" class="side-nav-link"><i class="fa-sharp fa-solid fa-users"></i>
                     <span> Users </span>
                 </a>
             </li>
-
         </ul>
         <div class="clearfix"></div>
     </div>

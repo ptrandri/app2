@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TicketController;
 use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
@@ -55,3 +56,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Route::get('/ticket/', [TicketController::class, 'index'])->middleware('auth');
 Route::resource('tickets',TicketController::class)->middleware('auth');
+
+Route::get('/report', [ReportController::class, 'index'])->middleware('auth');
