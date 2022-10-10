@@ -95,11 +95,17 @@ class TicketController extends Controller
             'SubjectCase' => 'required',
             'SubjectDesc' => 'required',
             'CallerName' => 'required',
-            'CallerEmail' => 'required',
+            'CallerEmail' => 'required|email:dns',
             'Status' => 'required',
             'Priority' => 'required',
             'Assigned_to' => 'required',
+            'image' => 'sometimes|nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
+
+        if($request->file('image')){
+            $updateData['image'] = $request->file('image')->store('image');
+        }
+
         Ticket::whereId($id)->update($updateData);
         return redirect()->route('tickets.index')->with('message','Tickets has been updated');
     }

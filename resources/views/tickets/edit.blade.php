@@ -11,7 +11,7 @@
         </div>
 
         <div class="card push-top">
-            <form method="post" action="{{ route('tickets.update', $tickets->id) }}">
+            <form method="post" action="{{ route('tickets.update', $tickets->id) }} " enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     @method('PATCH')
@@ -105,6 +105,22 @@
                                 </select>
                             </div>
 
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Please Upload your file</label>
+                                @if ($tickets->image)
+                                    <img src="{{ asset('storage/' . $tickets->image) }}"
+                                        class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                                @else
+                                    <img class="img-preview img-fluid mb-3 col-sm-5">
+                                @endif
+                                <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                    id="image" name="image" onchange="previewImage()">
+                                @error('image')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
 
                         </div>
                         <button type="submit" class="btn btn-block btn-danger">Update</button>
