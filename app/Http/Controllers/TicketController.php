@@ -108,7 +108,7 @@ class TicketController extends Controller
             if($tickets->image) {
                 Storage::delete($tickets->image);
             }
-            $validatedData['image'] = $request->file('image')->store('image');
+            $updateData['image'] = $request->file('image')->store('image');
         }
         Ticket::whereId($id)->update($updateData);
         return redirect()->route('tickets.index')->with('message','Tickets has been updated');
@@ -123,6 +123,9 @@ class TicketController extends Controller
     public function destroy($id)
     {
         $tickets = Ticket::findOrFail($id);
+        if($tickets->image) {
+            Storage::delete($tickets->image);
+        }
         $tickets->delete();
         return redirect()->route('tickets.index')->with('message','Tickets has been deleted');
     }
