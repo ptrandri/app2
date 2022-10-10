@@ -84,6 +84,7 @@
                                 </tbody>
                             </table>
 
+                            {{-- image --}}
                             <h4 class="card-title mt-4">Tickets Image</h4>
                             <div class="row mt-3">
                                 <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
@@ -91,6 +92,7 @@
                                         alt="Ticket-image" />
                                 </div>
                             </div>
+                            {{-- image --}}
 
 
                         </div>
