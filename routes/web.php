@@ -58,3 +58,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('tickets',TicketController::class)->middleware('auth');
 
 Route::get('/report', [ReportController::class, 'index'])->middleware('auth');
+
+Route::get('/users', function () {
+    return view('users.index', [
+        'title' => 'users'
+    ]);
+});
