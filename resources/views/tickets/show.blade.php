@@ -83,25 +83,32 @@
                                     </tr>
                                 </tbody>
                             </table>
-
-                            {{-- image --}}
-                            <h4 class="card-title mt-4">Tickets Image</h4>
-                            <div class="row mt-3">
-                                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                                    <img src="/storage/{{ $tickets->image }}" class="w-100 shadow-1-strong rounded mb-4"
-                                        alt="Ticket-image" />
-                                </div>
-                            </div>
-                            {{-- image --}}
-
-
                         </div>
-
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
+    {{-- image --}}
+    <div class="accordion" id="accordionExample">
+        <div class="card mb-0">
+            <div class="card-header" id="headingOne">
+                <h5 class="m-0">
+                    <a class="custom-accordion-title d-block pt-2 pb-2" data-bs-toggle="collapse" href="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Ticket Image
+                    </a>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="card-body">
+                    <img src="/storage/{{ $tickets->image }}" class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Ticket-image" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {{-- image --}}
 @endsection
