@@ -30,7 +30,7 @@
                                 <p class="text-muted mb-4">Enter your email address and password to access.</p>
                             </div>
 
-                            <form action="/login" method="POST">
+                            <form class="needs-validation" action="/login" method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Email address</label>

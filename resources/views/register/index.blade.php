@@ -11,7 +11,7 @@
                                 <p class="text-muted mb-4">Don't have an account? Create your account</p>
                             </div>
 
-                            <form action="/register" method="POST">
+                            <form class="needs-validation" action="/register" method="POST">
                                 @csrf
 
                                 <div class="mb-3">

@@ -4,7 +4,7 @@
         <h1 class="h5">Create Ticket</h1>
     </div>
     <div class="container-fluid">
-        <form action="{{ route('tickets.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="needs-validation" action="{{ route('tickets.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12">

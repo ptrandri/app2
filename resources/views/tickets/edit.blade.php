@@ -11,7 +11,8 @@
         </div>
 
         <div class="card push-top">
-            <form method="post" action="{{ route('tickets.update', $tickets->id) }} " enctype="multipart/form-data">
+            <form class="needs-validation" method="post" action="{{ route('tickets.update', $tickets->id) }} "
+                enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     @method('PATCH')
