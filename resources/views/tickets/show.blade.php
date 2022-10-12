@@ -103,8 +103,13 @@
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="card-body">
-                    <img src="/storage/{{ $tickets->image }}" class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Ticket-image" />
+                    @if ($tickets->image)
+                        <img src="/storage/{{ $tickets->image }}" class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Ticket-image" />
+                    @else
+                        <h5>No Image Available</h5>
+                    @endif
+
                 </div>
             </div>
         </div>
