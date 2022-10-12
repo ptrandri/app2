@@ -74,7 +74,7 @@
                 $('.searchdata').show();
             } else {
                 $('.alldata').show();
-                $('.searchdata').id();
+                $('.searchdata').hide();
             }
             $.ajax({
                 type: 'get',
