@@ -56,6 +56,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Route::get('/ticket/', [TicketController::class, 'index'])->middleware('auth');
 Route::resource('tickets',TicketController::class)->middleware('auth');
+Route::get('/search', [TicketController::class, 'search'])->middleware('auth');
 
 Route::get('/report', [ReportController::class, 'index'])->middleware('auth');
 
