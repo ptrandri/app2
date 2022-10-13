@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\Registered;
@@ -60,8 +61,4 @@ Route::get('/search', [TicketController::class, 'search'])->middleware('auth');
 
 Route::get('/report', [ReportController::class, 'index'])->middleware('auth');
 
-Route::get('/users', function () {
-    return view('users.index', [
-        'title' => 'users'
-    ]);
-});
+Route::resource('users',AdminUserController::class)->middleware('auth');
