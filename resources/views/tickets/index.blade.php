@@ -34,7 +34,7 @@
                     <th scope="col">Updated Date</th>
                 </tr>
                 <tbody class="alldata">
-                    @foreach ($tickets->reverse() as $ticket)
+                    @foreach ($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->id }}</td>
                             <td>{{ $ticket->AgentName }}</td>
@@ -51,6 +51,12 @@
                 </tbody>
                 <tbody id="Content" class="searchdata"> </tbody>
             </table>
+            {{-- Pagination --}}
+            <div class="d-flex justify-content-end m-1">
+                {!! $tickets->links() !!}
+            </div>
+            {{-- end Pagination --}}
+
         </div>
     </div>
 @endsection
