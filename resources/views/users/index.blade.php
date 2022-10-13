@@ -1,12 +1,22 @@
 @extends('dashboard.layouts.main')
 @section('container')
     <div class="container-fluid">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 border-bottom">
             <h1 class="h5">User Management </h1>
-            <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
-                <i class="fas fa-plus"></i> Add New
-            </a>
+            <div class="mb-3 text-end">
+                <td>
+                    <a href="{{ route('users.create') }}" method="get" style="display: inline-block">
+                        <button class="btn btn-success btn-sm" type="submit">Add User</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="users/create" method="get" style="display: inline-block">
+                        <button class="text-white btn btn-warning btn-sm" type="submit">Edit User</button>
+                    </a>
+                </td>
+            </div>
         </div>
+
     </div>
 
     <div class="container-fluid">
