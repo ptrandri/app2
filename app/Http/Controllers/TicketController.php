@@ -134,9 +134,12 @@ class TicketController extends Controller
     {
         $output="";
         $tickets=Ticket::where('AgentName', 'Like', '%'.$request->
-            search. '%')->orWhere('SubjectCase', 'Like', '%'.$request->
+            search. '%')->orwhere('SubjectCase', 'Like', '%'.$request->
+            search. '%')->orwhere('CallerName', 'Like', '%'.$request->
+            search. '%')->orwhere('Status', 'Like', '%'.$request->
+            search. '%')->orwhere('Priority', 'Like', '%'.$request->
+            search. '%')->orwhere('Assigned_to', 'Like', '%'.$request->
             search. '%')->get();
-
        foreach($tickets as $ticket)
        {
             $output.=
