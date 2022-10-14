@@ -2,76 +2,90 @@
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1 mb-3 border-bottom">
         <h1 class="h5">Report</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-        </div>
     </div>
-    <div>
-        <form class="needs-validation" action="" method="POST" novalidate="">
+    <div class="container-fluid card card-body">
+        <form class="needs-validation" action="/report" method="get" novalidate="">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Select Report Data</h4>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label class="form-label" for="Status">Select User Group</label>
-                                    <select class="form-select mb-3" id="Status" name="Status">
-                                        <option value="Engineer">All</option>
-                                        <option value="Agent">Agent</option>
-                                        <option value="Engineer">Engineer</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            {{-- date --}}
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="from">From</label>
-                                        <input type="date" class="form-control" id="from" name="from"
-                                            value="">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="to">to</label>
-                                        <input type="date" class="form-control" id="to" name="to"
-                                            placeholder="Caller name" value="">
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- date --}}
+                    <h4 class="card-title">Create Report</h4>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="" class="form-label">Report For</label>
+                            <select name="Assigned_to" class="form-select">
+                                <option value="Agent"
+                                    selected="{{ isset($_GET['Assigned_to']) && $_GET['Assigned_to'] == 'Agent' }}">
+                                    Agent
+                                </option>
+                                <option value="Engineer"
+                                    selected="{{ isset($_GET['Assigned_to']) && $_GET['Assigned_to'] == 'Engineer' }}">
+                                    Engineer
+                                </option>
+                            </select>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="filename">File Name</label>
-                                        <input type="text" class="form-control" id="filename" name="filename"
-                                            placeholder="File name" value="" required="">
-                                    </div>
-                                </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="from">Start Date</label>
+                                <input type="date" class="form-control" id="from" name="start_date"
+                                    value="{{ isset($_GET['start_date']) ? $_GET['start_date'] : '' }}">
                             </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <button class="btn btn-success" type="submit">Generate</button>
-                                    </div>
-                                </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="to">End Date</label>
+                                <input type="date" class="form-control" id="to" name="end_date"
+                                    placeholder="Caller name"
+                                    value="{{ isset($_GET['end_date']) ? $_GET['end_date'] : '' }}">
                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-1">
+                                <label class="form-label" for="to"></label>
+                            </div>
+                            <button class="btn btn-success" type="submit">Generate</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
+        <div class="container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Agent Name</th>
+                        <th scope="col">Subject Case</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Caller Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Assigned To</th>
+                        <th scope="col">Created Date</th>
+                        <th scope="col">Updated Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @forelse ($tickets as $key => $ticket)
+                        <tr>
+                            <th scope="row">{{ ++$key }}</th>
+                            <td>{{ $ticket->AgentName }}</td>
+                            <td>{{ $ticket->SubjectCase }}</td>
+                            <td>{{ $ticket->SubjectDesc }}</td>
+                            <td>{{ $ticket->CallerName }}</td>
+                            <td>{{ $ticket->Status }}</td>
+                            <td>{{ $ticket->Priority }}</td>
+                            <td>{{ $ticket->Assigned_to }}</td>
+                            <td>{{ $ticket->created_at }}</td>
+                            <td>{{ $ticket->updated_at }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4" class="text-start">No Data found</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection
