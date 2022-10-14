@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <h4 class="card-title">Create Report</h4>
                     <div class="row">
-                        <div class="col-md-5 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="" class="form-label">Report For</label>
                             <select name="Assigned_to" class="form-select">
                                 <option value="Agent"
