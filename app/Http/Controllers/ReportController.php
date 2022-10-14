@@ -15,7 +15,7 @@ class ReportController extends Controller
             $tickets = Ticket::where('Assigned_to', request()->Assigned_to)
             ->whereBetween('created_at',[$start_date,$end_date])->get();            
         } else {
-            $tickets = Ticket::latest()->get();
+            $tickets = Ticket::all();
         }
         return view('report.index', compact('tickets'));        
     }
