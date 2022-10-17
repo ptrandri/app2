@@ -71,7 +71,8 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('users.edit',compact('users'));
     }
 
     /**
@@ -83,7 +84,7 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     
     }
 
     /**

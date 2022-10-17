@@ -9,14 +9,8 @@
                         <button class="btn btn-success btn-sm" type="submit">Add User</button>
                     </a>
                 </td>
-                <td>
-                    <a href="users/create" method="get" style="display: inline-block">
-                        <button class="text-white btn btn-warning btn-sm" type="submit">Edit User</button>
-                    </a>
-                </td>
             </div>
         </div>
-
     </div>
 
     <div class="container-fluid">
@@ -25,6 +19,7 @@
             <div class="mt-3 ms-3">
                 <h1 class="h4">List Users</h1>
             </div>
+
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -41,7 +36,7 @@
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->id }}</td>
-                                    <td>{{ $user->username }}</td>
+                                    <td><a href="/users/{{ $user->id }}/edit">{{ $user->username }}</a></td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->email }}</td>

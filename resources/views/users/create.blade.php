@@ -3,7 +3,6 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-1 mb-3 border-bottom">
         <h1 class="h5">User Management </h1>
     </div>
-    </div>
 
     <form class="needs-validation" action="{{ route('users.store') }}" method="POST">
         @csrf
