@@ -29,7 +29,10 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Role</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
                                 <th>Action</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +42,18 @@
                                     <td><a href="/users/{{ $user->id }}/edit">{{ $user->username }}</a></td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    <td>{{ $user->updated_at }}</td>
+                                    <td><a>
+                                            <form action="{{ route('users.destroy', $user->id) }}" method="post"
+                                                style="display: inline-block">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-sm" type="submit"
+                                                    onclick="return confirm ('Are your sure to delete?')">Delete</button>
+                                            </form>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

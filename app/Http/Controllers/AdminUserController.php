@@ -14,7 +14,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users = User::select('id', 'username', 'email')->get();
+        $users = User::select('id', 'username', 'email','created_at','updated_at')->get();
 
         return view('users.index')->with([
             'users' => $users
