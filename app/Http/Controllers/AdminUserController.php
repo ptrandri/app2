@@ -84,7 +84,15 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
+        $users = User::findOrFail($id);
+        $updateData = $request->validate([
+            'username' => 'required|min:3|max:255|unique:users,email,'.$users->id,
+            'email' => 'required|email:dns|unique:users,email,'.$users->id,
+            'password' => 'required|min:8|max:255|confirmed|',
+        ]);
+        $updateData['password'] = Hash::make($updateData['password']);
+        User::whereId($id)->update($updateData);
+        return redirect()->route('users.index')->with('message','Users has been updated');
     }
 
     /**
@@ -95,6 +103,8 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->delete();
+        return redirect()->route('users.index')->with('message','Users has been deleted');
     }
 }
