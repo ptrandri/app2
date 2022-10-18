@@ -14,7 +14,12 @@
     </div>
 
     <div class="container-fluid">
-
+        @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>{{ session('message') }}</strong>
+            </div>
+        @endif
         <div class="card shadow mb-4">
             <div class="mt-3 ms-3">
                 <h1 class="h4">List Users</h1>
