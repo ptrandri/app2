@@ -4,7 +4,8 @@
         <h1 class="h5">Report</h1>
     </div>
     <div class="container-fluid card card-body">
-        <form class="needs-validation" action="/report" method="get" novalidate="">
+        <form class="needs-validation" action="/report/export" method="POST">
+            @csrf
             <div class="row">
                 <div class="col-12">
                     <h4 class="card-title">Create Report</h4>
@@ -22,6 +23,7 @@
                                 </option>
                             </select>
                         </div>
+
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label class="form-label" for="from">Start Date</label>
@@ -38,11 +40,12 @@
                                     value="{{ isset($_GET['end_date']) ? $_GET['end_date'] : '' }}">
                             </div>
                         </div>
+
                         <div class="col-md-1">
                             <div class="mb-1">
                                 <label class="form-label" for="to"></label>
                             </div>
-                            <button class="btn btn-success" type="submit">Generate</button>
+                            <button class="btn btn-success" type="submit" name='search' title='search'>Generate</button>
                         </div>
                     </div>
                 </div>
@@ -66,7 +69,7 @@
                 </thead>
 
                 <tbody>
-                    @forelse ($tickets as $key => $ticket)
+                    @forelse ($query as $key => $ticket)
                         <tr>
                             <th scope="row">{{ ++$key }}</th>
                             <td>{{ $ticket->AgentName }}</td>

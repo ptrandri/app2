@@ -60,5 +60,6 @@ Route::resource('tickets',TicketController::class)->middleware('auth');
 Route::get('/search', [TicketController::class, 'search'])->middleware('auth');
 
 Route::get('/report', [ReportController::class, 'index'])->middleware('auth');
+Route::post('/report/export', [ReportController::class, 'export'])->middleware('auth');
 
 Route::resource('users',AdminUserController::class)->middleware('auth');
