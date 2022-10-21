@@ -27,7 +27,7 @@
             </li>
         </ul>
 
-        @role('admin')
+        @role('Administrator')
             <ul class="side-nav">
                 <li class="side-nav-title side-nav-item">Admin</li>
                 <li class="side-nav-item">

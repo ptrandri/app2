@@ -59,6 +59,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('tickets',TicketController::class)->middleware('auth');
 Route::get('/search', [TicketController::class, 'search'])->middleware('auth');
 
-Route::get('/report', [ReportController::class, 'index'])->middleware('auth','role:admin');
-Route::post('/report/export', [ReportController::class, 'export'])->middleware('auth','role:admin');
-Route::resource('users',AdminUserController::class)->middleware('role:admin','auth');
+Route::get('/report', [ReportController::class, 'index'])->middleware('auth','role:Administrator');
+Route::post('/report/export', [ReportController::class, 'export'])->middleware('auth','role:Administrator');
+Route::resource('users',AdminUserController::class)->middleware('role:Administrator','auth');
