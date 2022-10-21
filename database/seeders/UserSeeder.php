@@ -20,20 +20,20 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
         ]);
-        $admin->assignRole('admin');
+        $admin->assignRole('Administrator');
 
         $agent = User::create([
             'username' => 'Agent',
             'email' => 'Agent@gmail.com',
             'password' => bcrypt('password'),
         ]);
-        $agent->assignRole('agent');
+        $agent->assignRole('Agent');
 
         $engineer = User::create([
             'username' => 'Engineer',
             'email' => 'engineer@gmail.com',
             'password' => bcrypt('password'),
         ]);
-        $engineer->assignRole('engineer');
+        $engineer->assignRole('Engineer');
     }
 }
