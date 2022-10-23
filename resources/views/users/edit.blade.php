@@ -69,6 +69,15 @@
                         </div>
                     </div>
 
+                    <div class="col-12">
+                        <label class="form-label" for="roles">Role Permission</label>
+                        <select class="form-select mb-3" id="roles" name="roles">
+                            @foreach ($roles as $role)
+                                <option value='{{ $role->id }}'>{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="mb-3 text-start">
                         <button class="btn btn-success text-white ms-1" type="submit">Update</button>
                     </div>

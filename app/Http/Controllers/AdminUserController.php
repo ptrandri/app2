@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 
@@ -53,7 +55,7 @@ class AdminUserController extends Controller
         $users = User::create($validateData);
         $users->assignRole($request->input('roles'));
 
-       return redirect('/users')->with('success', 'Successful to Add Users');
+        return redirect()->route('users.index')->with('success','User Created successfully');
     }
 
     /**
@@ -75,8 +77,9 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        $users = User::findOrFail($id);
-        return view('users.edit',compact('users'));
+        $users = User::find($id);
+        $roles = Role::select('id', 'name')->get();
+        return view('users.edit',compact('users','roles'));
     }
 
     /**
@@ -88,15 +91,35 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $users = User::findOrFail($id);
-        $updateData = $request->validate([
-            'username' => 'required|min:3|max:255|unique:users,username,'.$users->id,
-            'email' => 'required|email:dns|unique:users,email,'.$users->id,
+        // $users = User::findOrFail($id);
+        // $updateData = $request->validate([
+        //     'username' => 'required|min:3|max:255|unique:users,username,'.$users->id,
+        //     'email' => 'required|email:dns|unique:users,email,'.$users->id,
+        //     'password' => 'required|min:8|max:255|confirmed|',
+        // ]);
+        // $updateData['password'] = Hash::make($updateData['password']);
+        // User::whereId($id)->update($updateData);
+        // return redirect()->route('users.index')->with('message','Users has been updated');
+        $this->validate($request, [
+            'username' => 'required|min:3|max:255|unique:users,username,'.$id,
+            'email' => 'required|email:dns|unique:users,email,'.$id,
             'password' => 'required|min:8|max:255|confirmed|',
+            'roles' => 'required'
         ]);
-        $updateData['password'] = Hash::make($updateData['password']);
-        User::whereId($id)->update($updateData);
-        return redirect()->route('users.index')->with('message','Users has been updated');
+    
+        $input = $request->all();
+        if(!empty($input['password'])){ 
+            $input['password'] = Hash::make($input['password']);
+        }else{
+            $input = Arr::except($input,array('password'));    
+        }
+    
+        $users = User::find($id);
+        $users->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+    
+        $users->assignRole($request->input('roles'));
+        return redirect()->route('users.index')->with('success','User updated successfully');
     }
 
     /**
