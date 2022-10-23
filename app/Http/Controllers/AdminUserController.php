@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends Controller
@@ -28,7 +29,8 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $roles = Role::select('id', 'name')->get();
+        return view('users.create',compact('roles'));
     }
 
     /**
@@ -44,10 +46,12 @@ class AdminUserController extends Controller
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255',
             'password_confirmation' => 'required|same:password',
+            'roles' => 'required',
             'checkbox' =>'required',
         ]);
         $validateData['password'] = Hash::make($validateData['password']);
-        User::create($validateData);
+        $users = User::create($validateData);
+        $users->assignRole($request->input('roles'));
 
        return redirect('/users')->with('success', 'Successful to Add Users');
     }

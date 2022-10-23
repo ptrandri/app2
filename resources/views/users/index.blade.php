@@ -46,7 +46,13 @@
                                     <td>{{ $user->id }}</td>
                                     <td><a href="/users/{{ $user->id }}/edit">{{ $user->username }}</a></td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->email }}</td>
+                                    <td>
+                                        @if (!empty($user->getRoleNames()))
+                                            @foreach ($user->getRoleNames() as $v)
+                                                <a>{{ $v }}</a>
+                                            @endforeach
+                                        @endif
+                                    </td>
                                     <td>{{ $user->created_at }}</td>
                                     <td>{{ $user->updated_at }}</td>
                                     <td><a>
