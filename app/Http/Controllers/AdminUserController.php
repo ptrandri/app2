@@ -90,7 +90,7 @@ class AdminUserController extends Controller
     {
         $users = User::findOrFail($id);
         $updateData = $request->validate([
-            'username' => 'required|min:3|max:255|unique:users,email,'.$users->id,
+            'username' => 'required|min:3|max:255|unique:users,username,'.$users->id,
             'email' => 'required|email:dns|unique:users,email,'.$users->id,
             'password' => 'required|min:8|max:255|confirmed|',
         ]);
