@@ -23,6 +23,10 @@
 
     <link href="http://fonts.cdnfonts.com/css/nunito" rel="stylesheet">
 
+    {{-- Material Icons --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+        rel="stylesheet" crossorigin="anonymous">
+
     <link rel="icon" href="{{ asset('/assets/images/favicion.png') }}" />
 
 </head>
