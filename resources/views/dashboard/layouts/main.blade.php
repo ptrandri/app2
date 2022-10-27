@@ -32,7 +32,7 @@
 </head>
 
 <body class="loading"
-    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    data-layout-config='{"leftSideBarTheme":"white","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
 
     <!-- Start wrapper -->
     <div class="wrapper">
