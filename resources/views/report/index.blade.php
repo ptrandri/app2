@@ -51,7 +51,7 @@
                 </div>
             </div>
         </form>
-        <div class="container-fluid">
+        {{-- <div class="container-fluid">
             <table class="table">
                 <thead>
                     <tr>
@@ -89,6 +89,6 @@
                     @endforelse
                 </tbody>
             </table>
-        </div>
+        </div> --}}
     </div>
 @endsection
