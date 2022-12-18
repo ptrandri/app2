@@ -129,35 +129,4 @@ class TicketController extends Controller
         $tickets->delete();
         return redirect()->route('tickets.index')->with('message','Tickets has been deleted');
     }
-
-    public function search(Request $request)
-    {
-        $output="";
-        $tickets=Ticket::where('AgentName', 'Like', '%'.$request->
-            search. '%')->orwhere('SubjectCase', 'Like', '%'.$request->
-            search. '%')->orwhere('CallerName', 'Like', '%'.$request->
-            search. '%')->orwhere('Status', 'Like', '%'.$request->
-            search. '%')->orwhere('Priority', 'Like', '%'.$request->
-            search. '%')->orwhere('Assigned_to', 'Like', '%'.$request->
-            search. '%')->get();
-       foreach($tickets as $ticket)
-       {
-            $output.=
-            '<tr>
-            <td> '.$ticket->id.'</td> 
-            <td> '.$ticket->AgentName.'</td> 
-            <td> '.$ticket->SubjectCase.'</td>
-            <td> '.$ticket->SubjectDesc.'</td> 
-            <td> '.$ticket->CallerName.'</td> 
-            <td> '.$ticket->Status.'</td> 
-            <td> '.$ticket->Priority.'</td> 
-            <td> '.$ticket->Assigned_to.'</td> 
-            <td> '.$ticket->created_at.'</td> 
-            <td> '.$ticket->updated_at.'</td> 
-
-            </tr>';
-       }
-       return response($output);
-    }
-
 }

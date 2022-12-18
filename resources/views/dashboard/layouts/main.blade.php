@@ -15,8 +15,6 @@
 
     <link href="{{ URL::asset('/assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
 
-    @stack('css')
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,6 +26,8 @@
         rel="stylesheet" crossorigin="anonymous">
 
     <link rel="icon" href="{{ asset('/assets/images/favicion.png') }}" />
+
+    @stack('styles')
 
 </head>
 
@@ -72,37 +72,7 @@
         }
     </script>
     {{-- Image Preview On ticket created --}}
-
-    {{-- Search on ticket --}}
-    <script type="text/javascript">
-        $('#search').on('keyup', function() {
-            $value = $(this).val();
-
-            if ($value) {
-                $('.alldata').hide();
-                $('.searchdata').show();
-            } else {
-                $('.alldata').show();
-                $('.searchdata').hide();
-            }
-            $.ajax({
-                type: 'get',
-                url: '{{ URL::to('search') }}',
-                data: {
-                    'search': $value
-                },
-                success: function(data) {
-                    console.log(data);
-                    $('#Content').html(data);
-                }
-            });
-        })
-    </script>
-    {{-- Search on ticket --}}
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    @stack('scripts')
 </body>
 
 </html>
