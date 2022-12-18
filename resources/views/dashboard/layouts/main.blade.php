@@ -55,6 +55,8 @@
     {{-- JS --}}
     <script src="{{ url::asset('assets/js/vendor.min.js') }}"></script>
     <script src="{{ url::asset('assets/js/app.min.js') }}"></script>
+
+    {{-- Image Preview On ticket created --}}
     <script>
         function previewImage() {
             const image = document.querySelector('#image');
@@ -69,6 +71,9 @@
             }
         }
     </script>
+    {{-- Image Preview On ticket created --}}
+
+    {{-- Search on ticket --}}
     <script type="text/javascript">
         $('#search').on('keyup', function() {
             $value = $(this).val();
@@ -93,6 +98,8 @@
             });
         })
     </script>
+    {{-- Search on ticket --}}
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
