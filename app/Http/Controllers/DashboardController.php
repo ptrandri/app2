@@ -9,7 +9,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $assigned_to = auth()->user()->username;
+        $status = 'Open' ; 
+        $filter = Ticket::where('Assigned_to','like', '%'.$assigned_to.'%')
+                        ->orWhere('SubjectCase' , 'like', '%'.$status.'%')->get();
         $dashboard = Ticket::all();
-        return view ('dashboard.index',compact('dashboard'));
+        return view ('dashboard.index',compact('dashboard', 'filter'));
     }
 }

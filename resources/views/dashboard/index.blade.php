@@ -72,7 +72,7 @@
         <h1 class="h5">Ticket Info</h1>
     </div>
 
-    @if ($dashboard->where('Status', 'Open')->count())
+    @if ($filter->where('Status', 'Open')->count())
         <div class="card">
             <table class="table bg-white text-black">
                 <thead>
@@ -89,18 +89,44 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($dashboard->where('Status', 'Open')->reverse() as $ticket)
-                        <tr>
-                            <td>{{ $ticket->id }}</td>
-                            <td>{{ $ticket->AgentName }}</td>
-                            <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
-                            <td>{{ $ticket->SubjectDesc }}</td>
-                            <td>{{ $ticket->CallerName }}</td>
-                            <td>{{ $ticket->Status }}</td>
-                            <td>{{ $ticket->Priority }}</td>
-                            <td>{{ $ticket->Assigned_to }}</td>
-                            <td>{{ $ticket->created_at }}</td>
-                        </tr>
+                    @foreach ($filter as $ticket)
+                        @if ($ticket->Assigned_to === 'Admin')
+                            <tr>
+                                <td>{{ $ticket->id }}</td>
+                                <td>{{ $ticket->AgentName }}</td>
+                                <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
+                                <td>{{ $ticket->SubjectDesc }}</td>
+                                <td>{{ $ticket->CallerName }}</td>
+                                <td>{{ $ticket->Status }}</td>
+                                <td>{{ $ticket->Priority }}</td>
+                                <td>{{ $ticket->Assigned_to }}</td>
+                                <td>{{ $ticket->created_at }}</td>
+                            </tr>
+                        @elseif ($ticket->Assigned_to === 'Agent')
+                            <tr>
+                                <td>{{ $ticket->id }}</td>
+                                <td>{{ $ticket->AgentName }}</td>
+                                <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
+                                <td>{{ $ticket->SubjectDesc }}</td>
+                                <td>{{ $ticket->CallerName }}</td>
+                                <td>{{ $ticket->Status }}</td>
+                                <td>{{ $ticket->Priority }}</td>
+                                <td>{{ $ticket->Assigned_to }}</td>
+                                <td>{{ $ticket->created_at }}</td>
+                            </tr>
+                        @elseif ($ticket->Assigned_to === 'Engineer')
+                            <tr>
+                                <td>{{ $ticket->id }}</td>
+                                <td>{{ $ticket->AgentName }}</td>
+                                <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
+                                <td>{{ $ticket->SubjectDesc }}</td>
+                                <td>{{ $ticket->CallerName }}</td>
+                                <td>{{ $ticket->Status }}</td>
+                                <td>{{ $ticket->Priority }}</td>
+                                <td>{{ $ticket->Assigned_to }}</td>
+                                <td>{{ $ticket->created_at }}</td>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>
