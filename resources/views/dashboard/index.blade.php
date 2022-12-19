@@ -97,8 +97,33 @@
                                 <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
                                 <td>{{ $ticket->SubjectDesc }}</td>
                                 <td>{{ $ticket->CallerName }}</td>
-                                <td>{{ $ticket->Status }}</td>
-                                <td>{{ $ticket->Priority }}</td>
+                                <td>
+                                    @if ($ticket->Status === 'Open')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Open
+                                        </span>
+                                    @endif
+                                </td>
+
+                                <td>
+                                    @if ($ticket->Priority === 'Low')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Low
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Normal')
+                                        <span class="badge rounded-pill bg-primary text-white">
+                                            Normal
+                                        </span>
+                                    @elseif ($ticket->Priority === 'High')
+                                        <span class="badge rounded-pill bg-warning text-white">
+                                            High
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Critical')
+                                        <span class="badge rounded-pill bg-danger text-white">
+                                            Critical
+                                        </span>
+                                    @endif
+                                </td>
                                 <td>{{ $ticket->Assigned_to }}</td>
                                 <td>{{ $ticket->created_at }}</td>
                             </tr>
@@ -109,8 +134,32 @@
                                 <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
                                 <td>{{ $ticket->SubjectDesc }}</td>
                                 <td>{{ $ticket->CallerName }}</td>
-                                <td>{{ $ticket->Status }}</td>
-                                <td>{{ $ticket->Priority }}</td>
+                                <td>
+                                    @if ($ticket->Status === 'Open')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Open
+                                        </span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($ticket->Priority === 'Low')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Low
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Normal')
+                                        <span class="badge rounded-pill bg-primary text-white">
+                                            Normal
+                                        </span>
+                                    @elseif ($ticket->Priority === 'High')
+                                        <span class="badge rounded-pill bg-warning text-white">
+                                            High
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Critical')
+                                        <span class="badge rounded-pill bg-danger text-white">
+                                            Critical
+                                        </span>
+                                    @endif
+                                </td>
                                 <td>{{ $ticket->Assigned_to }}</td>
                                 <td>{{ $ticket->created_at }}</td>
                             </tr>
@@ -121,8 +170,32 @@
                                 <td><a href="/tickets/{{ $ticket->id }}">{{ $ticket->SubjectCase }}</a></td>
                                 <td>{{ $ticket->SubjectDesc }}</td>
                                 <td>{{ $ticket->CallerName }}</td>
-                                <td>{{ $ticket->Status }}</td>
-                                <td>{{ $ticket->Priority }}</td>
+                                <td>
+                                    @if ($ticket->Status === 'Open')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Open
+                                        </span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($ticket->Priority === 'Low')
+                                        <span class="badge rounded-pill bg-success text-white">
+                                            Low
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Normal')
+                                        <span class="badge rounded-pill bg-primary text-white">
+                                            Normal
+                                        </span>
+                                    @elseif ($ticket->Priority === 'High')
+                                        <span class="badge rounded-pill bg-warning text-white">
+                                            High
+                                        </span>
+                                    @elseif ($ticket->Priority === 'Critical')
+                                        <span class="badge rounded-pill bg-danger text-white">
+                                            Critical
+                                        </span>
+                                    @endif
+                                </td>
                                 <td>{{ $ticket->Assigned_to }}</td>
                                 <td>{{ $ticket->created_at }}</td>
                             </tr>
