@@ -130,6 +130,9 @@
                     @endforeach
                 </tbody>
             </table>
+            {{-- Pagination --}}
+            <div class="d-flex justify-content-end m-1">{!! $filter->links() !!}</div>
+            {{-- end Pagination --}}
         </div>
     @else
         <div class="card">
